@@ -1,10 +1,10 @@
 streamlit
-langchain
-langchain-community
-langchain-core
+langchain==0.2.16
+langchain-community==0.2.16
+langchain-core==0.2.38
 langchain-groq
-langchain-text-splitters
-chromadb
+langchain-text-splitters==0.2.4
+faiss-cpu
 pypdf
 sentence-transformers
 python-dotenv
@@ -12,3 +12,4 @@ tiktoken
 unstructured
 langchain-ollama
 ollama
+torchvision
