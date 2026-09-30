@@ -438,7 +438,7 @@ hr { border: none !important; border-top: 1px solid var(--border) !important; ma
 load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
 
-llm = ChatGroq(groq_api_key=groq_api_key, model_name="llama-3.1-8b-instant")
+llm = ChatGroq(groq_api_key=groq_api_key, model_name="llama3-8b-8192")
 
 contextualize_q_system_prompt = (
     "Given a chat history and the latest user question "
