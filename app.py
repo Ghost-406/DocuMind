@@ -7,10 +7,10 @@ import tempfile
 from dotenv import load_dotenv
 
 from langchain_groq import ChatGroq
-from langchain_community.embeddings import OllamaEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain.chains import create_retrieval_chain, create_history_aware_retriever
+from langchain_classic.chains.combine_documents import create_stuff_documents_chain
+from langchain_classic.chains import create_retrieval_chain, create_history_aware_retriever
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import DirectoryLoader
@@ -501,7 +501,7 @@ def remove_uploaded_file(filename):
         st.session_state.pop(key, None)
 
 def create_vector_embedding(pdf_dir):
-    st.session_state.embeddings = OllamaEmbeddings(model="nomic-embed-text")
+    st.session_state.embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
     st.session_state.loader     = DirectoryLoader(pdf_dir, glob="**/*")
     st.session_state.docs       = st.session_state.loader.load()
     st.session_state.text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
