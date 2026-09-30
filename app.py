@@ -282,8 +282,7 @@ section[data-testid="stSidebarContent"] { display: none !important; }
 
 /* ── INPUT BAR ─── */
 .input-bar-wrap {
-  position: sticky;
-  bottom: 0;
+  position: relative;
   background: linear-gradient(0deg, var(--bg) 70%, transparent);
   padding: 16px 0 20px;
   margin-top: 8px;
